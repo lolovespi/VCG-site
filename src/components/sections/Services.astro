@@ -5,35 +5,37 @@ import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import { services } from "../../utils/data.ts";
 
-
 type ServicesProps = {
-    title: string;
-    description: string;
-    icon: string
+  title: string;
+  description: string;
+  icon: string;
 };
-
-
 ---
 
-<section id="services">
-    <Container className="space-y-10 md:sapce-y-12">
-        <div class="text-center max-w-3xl mx-auto space-y-4">
-            <Title>
-                What we offer
-            </Title>
-            <Paragraph>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Paragraph>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {
-                    services.map((service: ServicesProps) => {
-                    return (
-                            <Service title={service.title} description={service.description} icon={service.icon}>
-                            </Service>
-                            );
-                    })
-            }
-        </div>
-    </Container>
+<section id="services" class="bg-[rgb(var(--color-box))] text-[rgb(var(--heading-1))] pt-10 pb-20">
+  <Container className="space-y-10 md:space-y-12">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <Title>
+        What we offer
+      </Title>
+      
+    </div>
+
+    <!-- Service Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 justify-center">
+
+      {
+        services.map((service: ServicesProps) => (
+          <Service
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+          />
+        ))
+      }
+    </div>
+
+  </Container>
 </section>

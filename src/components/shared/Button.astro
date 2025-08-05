@@ -1,22 +1,41 @@
 ---
-export interface Props{
-    className?:string,
-    variant:"primary"|"secondary"
+export interface Props {
+  className?: string;
+  variant: "primary" | "secondary";
+  type?: "button" | "submit" | "reset";
 }
 
-const {className, variant} = Astro.props
+const { className = "", variant } = Astro.props;
 
-const getThemeStyle = (variant:"primary"|"secondary")=>{
-    if (variant === "primary") {
-        return "bg-primary border-transparent relative after:bg-[#172554] hover:border-[#172554]"
-    }
-    return "text-primary"
-}
+const getThemeStyle = (variant: "primary" | "secondary") => {
+  if (variant === "primary") {
+    return `
+      bg-[rgb(var(--color-pink))] 
+      text-white 
+      border-transparent 
+      relative 
+      after:bg-[rgb(var(--color-teal))] 
+      hover:border-[rgb(var(--color-teal))]`;
+  }
 
-
+  // Secondary: outline + brand purple text + pink ripple
+  return `
+    bg-transparent 
+    text-[rgb(var(--heading-1))] 
+    border-[rgb(var(--color-pink))] 
+    relative 
+    after:bg-[rgb(var(--color-pink))] 
+    hover:bg-[rgb(var(--color-pink))] 
+    hover:text-white`;
+};
 ---
-<button class={`px-6 py-3 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
-                    after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#172554]
-                    ${getThemeStyle(variant)} hover:after:opacity-100 hover:after:scale-[2.5] ${className}`}>
-    <slot/>
+
+<button
+  class={`px-6 py-3 rounded-full outline-none border overflow-hidden relative duration-300 ease-linear
+          after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 
+          after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 
+          hover:after:opacity-100 hover:after:scale-[2.5]
+          ${getThemeStyle(variant)} ${className}`}
+>
+  <slot />
 </button>

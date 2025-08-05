@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #1d4ed8;
+  --color-primary: 72 40 107;
   --color-box-bg: rgb(var(--color-box));
   --color-box-shadow: rgb(var(--box-sd));
   --color-box-border: rgb(var(--box-border));
@@ -14,24 +14,36 @@
 }
 
 :root {
-  --color-bg: 255 255 255;
-  --color-box: 255 255 255;
-  --box-border: 229 231 235;
-  --box-sd: 226 232 240 / 0.5;
-  --heading-1: 23 37 84;
-  --heading-2: 31 41 55;
-  --heading-3: 55 65 81;
+  --color-bg: 253 250 255;         /* off-white with purple tint */
+  --color-box: 255 255 255;        /* pure white */
+  --box-border: 224 216 236;       /* soft purple-gray */
+  --box-sd: 255 78 203 / 0.08;     /* subtle pink glow */
+  --heading-1: 72 40 107;          /* brand purple */
+  --heading-2: 124 81 158;         /* muted purple */
+  --heading-3: 41 194 201;         /* teal accent */
+  --color-pink: 72 40 107;        /* dark purple for light theme */
+  --color-teal: 41 194 201;       /* #29c2c9 */
+  --gradient-start: 72 40 107;   /* dark purple */
+  --gradient-mid: 92 70 124;     /* softer purple */
+  --gradient-end: 41 194 201;    /* teal (still okay here) */
 }
 
+
 .dark {
-  --color-bg: 3 7 18;
-  --color-box: 17 24 39;
-  --box-border: 243 244 246 / 0.1;
-  --box-sd: transparent;
-  --heading-1: 255 255 255;
-  --heading-2: 243 244 246;
-  --heading-3: 209 213 219;
+  --color-bg: 72 40 107;           /* #48286b */
+  --color-box: 58 39 88;           /* #3a2758 */
+  --box-border: 92 70 124 / 0.4;   /* #5c467c with transparency */
+  --box-sd: 255 78 203 / 0.1;      /* cyber pink glow */
+  --heading-1: 255 255 255;        /* white */
+  --heading-2: 243 230 241;        /* soft pinkish gray */
+  --heading-3: 200 246 248;        /* soft teal tint */
+  --color-pink: 255 78 203;       /* #ff4ecb */
+  --color-teal: 41 194 201;       /* #29c2c9 */
+  --gradient-start: 255 78 203;  /* bright pink */
+  --gradient-mid: 200 246 248;   /* soft teal tint */
+  --gradient-end: 255 255 255;   /* white or light accent */
 }
+
 
 html {
   scroll-behavior: smooth;
