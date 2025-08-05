@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 ---
-
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <Layout title="Contact | Vaughn Cyber Group">
   <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
     <section class="pt-28 pb-32 bg-[rgb(var(--color-bg))] text-[rgb(var(--heading-1))] relative">
@@ -16,9 +16,9 @@ import Layout from "../layouts/Layout.astro";
         <p class="text-lg md:text-xl text-[rgb(var(--heading-2))] mb-12">
           We'd love to hear from you. Fill out the form and we'll respond as soon as possible.
         </p>
-
+        
         <form
-          action="https://formsubmit.co/46ab938795725fa56d5d96bcd26f88fe"
+          action="contact"
           method="POST"
           class="space-y-6 text-left"
         >
@@ -62,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
          
-
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAABorTOH3FTw2Tm9z"></div>
           <!-- Submit Button -->
           <div class="text-center pt-6">
             <button
@@ -72,6 +72,8 @@ import Layout from "../layouts/Layout.astro";
               Send Message
             </button>
           </div>
+          <!-- Cloudflare Turnstile widget -->
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         </form>
       </div>
     </section>
