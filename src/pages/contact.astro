@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+import Button from "../components/shared/Button.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<!-- Replace the variables below. -->
+<script>
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+</script>
+<Layout title="Contact | Vaughn Cyber Group">
+  <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+    <section class="pt-28 pb-32 bg-[rgb(var(--color-bg))] text-[rgb(var(--heading-1))] relative">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute w-28 h-28 blur-2xl bg-[rgb(var(--color-pink))] rounded-full -top-12 -left-12 opacity-30"></div>
+        <div class="absolute w-40 h-40 blur-3xl bg-[rgb(var(--color-teal))] rounded-full -bottom-16 -right-16 opacity-20"></div>
+      </div>
+
+      <div class="max-w-2xl mx-auto px-6 relative z-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
+        <p class="text-lg md:text-xl text-[rgb(var(--heading-2))] mb-12">
+          We'd love to hear from you. Fill out the form and we'll respond as soon as possible.
+        </p>
+
+        <!-- Load the reCAPTCHA script -->
+       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+        <form
+          action="https://formsubmit.co/46ab938795725fa56d5d96bcd26f88fe"
+          method="POST"
+          class="space-y-6 text-left"
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="/thank-you" />
+
+          <!-- Name Field -->
+          <div>
+            <label for="name" class="block mb-2 font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full p-4 rounded-lg border border-[rgb(var(--box-border))] bg-[rgb(var(--color-box))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))]"
+            />
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="block mb-2 font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-4 rounded-lg border border-[rgb(var(--box-border))] bg-[rgb(var(--color-box))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))]"
+            />
+          </div>
+
+          <!-- Message Field -->
+          <div>
+            <label for="message" class="block mb-2 font-medium">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full p-4 rounded-lg border border-[rgb(var(--box-border))] bg-[rgb(var(--color-box))] resize-none focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))]"
+            ></textarea>
+          </div>
+            <!-- reCAPTCHA box -->
+            <div class="g-recaptcha" data-sitekey="6Lf-x5srAAAAAFhl8dEnJZbfuaMVtqvSmhBaT_gI"></div>
+          <!-- Submit Button -->
+          <div class="text-center pt-4">
+          <Button variant={"primary"} type="submit">
+            <span class="text-white relative z-[5]">Get in Touch</span>
+          </Button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</Layout>
