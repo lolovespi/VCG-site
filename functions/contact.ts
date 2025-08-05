@@ -60,7 +60,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
   return new Response("Failed to send email", { status: 500 });
 }
 
-  }
+  
 
   // ✅ Redirect after success
   return Response.redirect("https://vaughncybergroup.com/thank-you", 302);
