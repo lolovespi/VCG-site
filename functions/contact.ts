@@ -16,7 +16,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
-      secret: env.turnstile-key,
+      secret: env["turnstile-key"],
       response: token,
     }),
   }).then(res => res.json());
@@ -29,7 +29,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
   const emailRes = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${env.resend-api}`,
+      Authorization: `Bearer ${env["resend-token"]}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -44,8 +44,18 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     }),
   });
 
+  //debugging  
+  console.log("Received POST to /contact");
+
+    if (!name || !email || !message || !token) {
+    console.log("Missing fields", { name, email, message, token });
+    return new Response("Missing required fields", { status: 400 });
+    }
+
+
   if (!emailRes.ok) {
     return new Response("Failed to send email", { status: 500 });
+
   }
 
   // ✅ Redirect after success
