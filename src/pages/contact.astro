@@ -1,15 +1,8 @@
 ---
 import "../styles/global.css";
-import Button from "../components/shared/Button.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<!-- Replace the variables below. -->
-<script>
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
-</script>
 <Layout title="Contact | Vaughn Cyber Group">
   <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
     <section class="pt-28 pb-32 bg-[rgb(var(--color-bg))] text-[rgb(var(--heading-1))] relative">
@@ -23,10 +16,6 @@ import Layout from "../layouts/Layout.astro";
         <p class="text-lg md:text-xl text-[rgb(var(--heading-2))] mb-12">
           We'd love to hear from you. Fill out the form and we'll respond as soon as possible.
         </p>
-
-        <!-- Load the reCAPTCHA script -->
-       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 
         <form
           action="https://formsubmit.co/46ab938795725fa56d5d96bcd26f88fe"
@@ -71,13 +60,17 @@ import Layout from "../layouts/Layout.astro";
               class="w-full p-4 rounded-lg border border-[rgb(var(--box-border))] bg-[rgb(var(--color-box))] resize-none focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))]"
             ></textarea>
           </div>
-            <!-- reCAPTCHA box -->
-            <div class="g-recaptcha" data-sitekey="6Lf-x5srAAAAAFhl8dEnJZbfuaMVtqvSmhBaT_gI"></div>
+
+         
+
           <!-- Submit Button -->
-          <div class="text-center pt-4">
-          <Button variant={"primary"} type="submit">
-            <span class="text-white relative z-[5]">Get in Touch</span>
-          </Button>
+          <div class="text-center pt-6">
+            <button
+              type="submit"
+              class="px-6 py-3 rounded-full bg-[rgb(var(--color-primary))] text-white font-semibold hover:opacity-90 transition"
+            >
+              Send Message
+            </button>
           </div>
         </form>
       </div>
