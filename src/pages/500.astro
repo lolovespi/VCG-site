@@ -1,0 +1,22 @@
+---
+// 404.astro or 500.astro
+import "../styles/global.css";
+import ErrorLayout from "../layouts/ErrorLayout.astro";
+---
+
+<ErrorLayout title="Page Not Found">
+  <!-- Fixed logo in top-left corner -->
+  <header class="absolute top-6 left-6">
+    <img src="/VCGlogo.svg" alt="Vaughn Cyber Group Logo" class="w-12 h-12 md:w-16 md:h-16" />
+  </header>
+
+  <!-- Centered error message -->
+  <main class="flex items-center justify-center min-h-screen bg-[rgb(var(--color-bg))] text-[rgb(var(--heading-1))] px-6">
+    <div class="max-w-xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Something went wrong.</h1>
+      <p class="text-lg md:text-xl text-[rgb(var(--heading-2))]">
+        We're working to fix it. Please try again later.
+      </p>
+    </div>
+  </main>
+</ErrorLayout>

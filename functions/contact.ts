@@ -52,9 +52,13 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     return new Response("Missing required fields", { status: 400 });
     }
 
-
-  if (!emailRes.ok) {
-    return new Response("Failed to send email", { status: 500 });
+//
+ // if (!emailRes.ok) {
+   // return new Response("Failed to send email", { status: 500 });
+    if (!emailRes.ok) {
+  console.log("❌ Resend Error Response:", emailBody);
+  return new Response("Failed to send email", { status: 500 });
+}
 
   }
 
