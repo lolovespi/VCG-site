@@ -1,0 +1,204 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/shared/Button.astro";
+import Container from "../components/shared/Container.astro";
+import Paragraph from "../components/shared/Paragraph.astro";
+
+
+const examples = [
+  {
+    title: "Plan for Chaos: Why Most Incident Response Plans Fail Big",
+    description:
+      "Southeast Cybersecurity Summit 2025 Keynote:  Incident response plans are critical to any cybersecurity strategy, but the reality is that many of these plans aren’t enough when faced with major, high-impact incidents...",
+    date: "April 10, 2025",
+    link: "",
+    type: "talk",
+  },
+  {
+    title: "Measuring Cybersecurity Success: Crafting Metrics with NIST CSF and Beyond",
+    description:
+      "Most cybersecurity leaders understand what needs to improve — this talk shows how to communicate it with data and strategy using the NIST CSF.",
+    date: "October 15, 2024",
+    link: "https://events.isc2.org/p/s/measuring-cybersecurity-success-crafting-metrics-with-nist-csf-and-beyond-6467",
+    type: "talk",
+  },
+  {
+    title: "Unveiling the Spy in Your Pocket: How Everyday Apps Are Tracking You — and What You Can Do About It",
+    description:
+      "Lora Vaughn explores how common apps collect and exploit personal data — and shares practical tips to protect your privacy.",
+    date: "April 17, 2024",
+    link: "",
+    type: "talk",
+  },
+  {
+    title: "A Bug (Bounty) Story",
+    description: "Presentation at 2022 Southeast Cybersecurity Summit about building effective bug bounty programs.",
+    date: "April 2022",
+    link: "",
+    type: "talk",
+  },
+  {
+    title: "A Guide to Cybersecurity Careers",
+    description: "Transitioning from cybersecurity student to professional doesn’t have to be daunting.",
+    date: "January 25, 2022",
+    link: "https://www.youtube.com/watch?v=n7-gHo74Ozc&ab_channel=TechBirmingham",
+    type: "video",
+  },
+  {
+    title: "Empathy: Your Career Superpower",
+    description: "2021 Cyber Now Summit Keynote.  How empathy can transform your career.",
+    date: "April 27, 2021",
+    link: "",
+    type: "talk",
+  },
+  {
+    title: "A CISO's Guide to Cybersecurity Careers",
+    description: "WiCyS 2020 session on professional growth and opportunities in cybersecurity.",
+    date: "November 11, 2020",
+    link: "https://www.wicys.org/wp-content/uploads/2020/11/2020_WiCyS_Program_FINAL.pdf",
+    type: "talk",
+  },
+  {
+    title: "Flip This House: Overhauling a Cyber Program and Culture with NIST CSF",
+    description: "Cyber Now Summit 2020 keynote on transformation using NIST CSF.",
+    date: "September 2, 2020",
+    link: "",
+    type: "talk",
+  },
+  {
+    title: "Simmons Bank on Security Best Practices",
+    description: "Lora Vaughn discusses simple steps to protect your digital life. KATV Little Rock.",
+    date: "August 31, 2019",
+    link: "https://katv.com/community/daybreak/simmons-banks-talks-about-the-best-security-practices-to-keep-your-information-safe",
+    type: "video",
+  },
+  {
+    title: "You Can't Boil the Ocean: Building a Risk-Based Vulnerability Program",
+    description: "Presentation at 2018 Alabama Cyber Now Conference.",
+    date: "April 11, 2018",
+    link: "",
+    type: "talk",
+  },
+  {
+    title: "Keepin' It Real: Identifying 'Real Risk' with Threat-Centric VM",
+    description: "Rapid7 UNITED2017 session on prioritizing vulnerabilities that matter.",
+    date: "September 13, 2017",
+    link: "https://share.vidyard.com/watch/c5ee7ifttbSnjXUMEnoy6C?custom_id=",
+    type: "video",
+  },
+];
+---
+
+<Layout
+  title="Speaking | Vaughn Cyber Group"
+  description="Cybersecurity keynotes and executive sessions by Lora Vaughn. Book her to speak at your event."
+  image="/images/headshot-square.png"
+  url="https://vaughncybergroup.com/speaking"
+>
+<main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+ <section class="relative pt-20 lg:pt-24 bg-[rgb(var(--color-bg))] text-[rgb(var(--heading-1))]">
+  <!-- Reduced vertical gap between text and potential image/content columns -->
+  <Container className={"flex flex-col lg:flex-row gap-6 lg:gap-8"}>
+
+    <!-- Gradient Background Blobs -->
+    <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
+      <span class="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-[rgb(var(--color-teal))] blur-xl opacity-60 lg:opacity-95 hidden lg:block"></span>
+      <span class="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-[rgb(var(--color-pink))] blur-xl opacity-80"></span>
+    </div>
+
+    <!-- Large Gradient Accent -->
+    <span class="w-4/12 lg:w-2/12 aspect-square bg-gradient-to-tr from-[rgb(var(--color-pink))] to-[rgb(var(--color-teal))] absolute -top-5 lg:left-0 rounded-full skew-y-12 blur-2xl opacity-40 skew-x-12 rotate-90"></span>
+
+    <!-- Text Column -->
+    <!-- Reduced vertical padding to eliminate bottom gap inside text section -->
+    <div class="relative flex flex-col items-center text-center lg:text-left py-0 lg:py-2 
+                lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-[rgb(var(--heading-1))]">
+         
+        <span class="text-transparent bg-clip-text bg-gradient-to-br 
+          from-[rgb(var(--gradient-start))] 
+          via-[rgb(var(--gradient-mid))] 
+          to-[rgb(var(--gradient-end))]">
+
+      Cybersecurity That Connects</h1>
+      <p class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-heading-1">
+        Speaking, Keynotes & Cybersecurity Education by Lora Vaughn
+      </p>
+      <p class="text-lg sm:text-xl md:text-2xl text-heading-2 max-w-3xl mx-auto">
+        From boardrooms to global conferences, Lora delivers high-impact talks that blend strategic insight, real-world security leadership, and a deep commitment to building resilient organizations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Headshot Section -->
+  <section class="py-12 bg-box">
+    <div class="container mx-auto flex flex-col items-center text-center px-6">
+      <img src="/images/headshot-square.png" alt="Lora Vaughn headshot"
+        class="w-48 h-48 rounded-full object-cover shadow-md mb-6" />
+      <h2 class="text-2xl font-semibold text-heading-1">Meet Lora Vaughn</h2>
+      <p class="max-w-lg text-heading-2">
+        Lora is an award-winning cybersecurity executive, educator, and speaker. Her talks blend real‑world insight with empathy‑driven leadership, helping organizations build trust, resilience, and security maturity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Signature Topics Section -->
+  <section class="py-16 bg-bg-base">
+    <div class="container max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-6 text-heading-1">Signature Topics</h2>
+      <ul class="space-y-6 text-left text-heading-2">
+        <li><strong>Plan for Chaos:</strong> How Incident Response Plans Fail Big</li>
+        <li><strong>Measuring Cybersecurity Success:</strong>Crafting Metrics with NIST CSF and Beyond</li>
+        <li><strong>Executive Cybersecurity:</strong> What Every Founder and Board Should Know</li>
+        <li><strong>Unveiling the Spy in Your Pocket:</strong> How Everyday Apps Are Tracking You — and What You Can Do About It</li>
+        <li><strong>Empathy-Driven Security:</strong> The Hidden Superpower of High-Performing Teams</li>
+        <li><strong>Should I Stay or Should I Go?</strong> Navigating Career Crossroads in Cybersecurity</li>
+        <li><strong>Rethinking Vulnerability Management:</strong> Escaping the Broken CVSS Model</li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- Media Examples Section -->
+  <section class="py-16 bg-box">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-8 text-center text-heading-1">Media & Teaching Highlights</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {examples.map((item) => (
+          <article class="p-6 bg-bg-base rounded-lg shadow border border-box">
+            <h3 class="font-semibold text-xl mb-2 text-heading-2">{item.title}</h3>
+            <p class="text-sm mb-2 text-heading-3">{item.date}</p>
+            <p class="text-sm mb-4 text-heading-2">{item.description}</p>
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-button hover:underline">
+                More &rarr;
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA Section -->
+  <section class="py-16 bg-bg-base">
+    <div class="container max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-semibold mb-4 text-heading-1">Book Lora to Speak</h2>
+      <p class="text-md mb-6 text-heading-2">
+        Whether you're planning a keynote, panel, or executive briefing—Lora brings clarity and impact to every stage.
+      </p>
+      <!-- Submit Button -->
+          <div class="mx-auto max-w-md sm:max-w-xl pt-10">
+          <a href="/contactus">
+          <Button variant={"primary"}>
+            <span class="text-white relative z-[5]">Request Availability</span>
+          </Button>
+        </a>
+        </div>
+      
+    </div>
+  </section>
+</main> 
+</Layout>

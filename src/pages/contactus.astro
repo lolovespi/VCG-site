@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/shared/Button.astro";
 ---
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <Layout title="Contact | Vaughn Cyber Group">
@@ -61,21 +62,19 @@ import Layout from "../layouts/Layout.astro";
             ></textarea>
           </div>
 
-         
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAABorTOH3FTw2Tm9z"></div>
           <!-- Submit Button -->
-          <div class="text-center pt-6">
-            <button
-              type="submit"
-              class="px-6 py-3 rounded-full bg-[rgb(var(--color-primary))] text-white font-semibold hover:opacity-90 transition"
-            >
-              Send Message
+                   <div class="max-w-2xl mx-auto px-6 relative z-10 text-center">
+                             
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAABorTOH3FTw2Tm9z"></div>
+
+            <Button variant={"primary"}>
+                            Send Message
             </button>
-          </div>
+          
           <!-- Cloudflare Turnstile widget -->
           <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+          </div>
         </form>
       </div>
     </section>
-  </main>
 </Layout>
