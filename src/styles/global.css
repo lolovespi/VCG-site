@@ -72,4 +72,46 @@ body {
   display: flex;
 }
 
+/* Custom utility classes for text colors */
+.text-heading-1 {
+  color: rgb(var(--heading-1));
+}
+
+.text-heading-2 {
+  color: rgb(var(--heading-2));
+}
+
+.text-heading-3 {
+  color: rgb(var(--heading-3));
+}
+
+.text-base-content {
+  color: rgb(var(--color-box)); /* adjust if needed */
+}
+
+/* Optional lighter variants */
+.text-heading-1\/70 {
+  color: rgb(var(--heading-1) / 0.7);
+}
+.text-heading-2\/70 {
+  color: rgb(var(--heading-2) / 0.7);
+}
+.text-heading-3\/70 {
+  color: rgb(var(--heading-3) / 0.7);
+}
+
+/* Custom background classes */
+.bg-bg-base {
+  background-color: rgb(var(--color-bg));
+}
+
+.bg-box {
+  background-color: rgb(var(--color-box));
+}
+
+.border-box {
+  border-color: rgb(var(--box-border));
+}
+
+/* Button text col*
 
