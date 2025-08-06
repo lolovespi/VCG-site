@@ -56,11 +56,8 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
  // if (!emailRes.ok) {
    // return new Response("Failed to send email", { status: 500 });
     if (!emailRes.ok) {
-  console.log("❌ Resend Error Response:", emailBody);
-  return new Response("Failed to send email", { status: 500 });
-}
-
-  }
+       return new Response("Failed to send email", { status: 500 });
+    }
 
   // ✅ Redirect after success
   return Response.redirect("https://vaughncybergroup.com/thank-you", 302);
